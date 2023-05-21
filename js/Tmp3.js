@@ -3,6 +3,7 @@ const otherLinks = document.getElementById("other-links");
 const myNav = document.querySelector(".header .container .main-nav");
 const megaMenu = document.querySelector(".header .mega-menu");
 const scrollTopIcon = document.querySelector(".scroll i");
+const modeIcon = document.querySelector("#ch-mode");
 
 brgIcon.addEventListener("click", (eve)=>{
     // console.log(eve.currentTarget);
@@ -70,4 +71,16 @@ window.addEventListener("scroll", ()=>{
 //scroll top icon click
 scrollTopIcon.onclick = ()=>{
 window.scroll(0, 0);
+};
+//
+//
+modeIcon.onclick = () => {
+document.body.classList.toggle("dark-mode");
+if(document.body.classList.contains("dark-mode")){
+    modeIcon.classList.add("fa-sun");
+    modeIcon.classList.remove("fa-moon");
+} else {
+        modeIcon.classList.remove("fa-sun");
+        modeIcon.classList.add("fa-moon");
+    }
 };
